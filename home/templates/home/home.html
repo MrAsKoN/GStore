@@ -1,9 +1,49 @@
 {% extends 'home/base.html' %}
+
+
 {% block content %}
     <h1>Home Page</h1>
-    {% for product in products %}
+{% comment %}    {% for product in products %}
         <h2>{{ product.name }}</h2>
         <h3>{{ product.date_added }}</h3>
         <h3>{{ product.price }}</h3>
+        <h3>{{ product.type }}</h3>
+        <img src="{{ product.image.url }} " alt="product image">
+    {% endfor %}{% endcomment %}
+
+
+    {% for product in products %}
+    <div class="row">
+                <div class="col-md-4 product-men">
+                    <div class="product-shoe-info shoe text-center">
+                        <div class="men-thumb-item">
+                            <img src={{ product.image.url }} class="img-fluid" alt="">
+                        </div>
+                        <div class="item-info-product">
+                            <h4>
+                                <a href="#">{{ product.name }}</a>
+                            </h4>
+
+                            <div class="product_price">
+                                <div class="grid-price">
+                                    <span class="money">RS.{{ product.price }}</span>
+                                </div>
+                            </div>
+                            <ul class="stars">
+                                <li><a href="#"><span class="fa fa-star" aria-hidden="true"></span></a></li>
+                                <li><a href="#"><span class="fa fa-star" aria-hidden="true"></span></a></li>
+                                <li><a href="#"><span class="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                <li><a href="#"><span class="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                <li><a href="#"><span class="fa fa-star-o" aria-hidden="true"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
     {% endfor %}
+
+
+
+
+
+
 {% endblock content %}
