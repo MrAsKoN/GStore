@@ -10,17 +10,15 @@
                 <div class="col-lg-4  mt-lg-5 mt-4 mx-auto">
                     <div class="card">
                         <div class="card-header p-0 position-relative">
-                            <a href="http://127.0.0.1:8000/form-update-bus/{{ b.bus_id }}">
-                                <img class="card-img-bottom " src="{{ product.image.url }}" alt="Card image cap">
-
+                            <a href="{% url 'product' product.id %}">
+                            <img class="card-img-bottom " src="{{ product.image.url }}" alt="Card image cap">
                             </a>
                         </div>
                         <div class="card-body">
                             <h5 class="blog-title card-title font-weight-bold">
-                                <a href="http://127.0.0.1:8000/form-update-bus/{{ product.name }}">{{ product.name }}</a>
+                                <a href="{% url 'product' product.id %}">{{ product.name }}</a>
                             </h5>
                             <p>Rs.{{ product.price }}</p>
-                            {#<p>{{ product.description }}</p>#}
                             <a href="#" class="btn btn-primary">Add To Cart</a>
 
                         </div>
@@ -28,11 +26,5 @@
                 </div>
                 {% endfor %}
     </div>
-
-
-
-
-
-
 
 {% endblock content %}

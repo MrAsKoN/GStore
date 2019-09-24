@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="Avatar added">
-      <change afterPath="$PROJECT_DIR$/home/migrations/0004_product_image.py" afterDir="false" />
+    <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GStore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/GStore/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -117,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569331344720</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Home Page Cards added.&#10;Added Home url to Navbar">
+      <created>1569344758948</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569344758948</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +164,7 @@
     <MESSAGE value="Avatar added" />
     <MESSAGE value="dB" />
     <MESSAGE value="Added 3 products (db)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 3 products (db)" />
+    <MESSAGE value="Home Page Cards added.&#10;Added Home url to Navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Home Page Cards added.&#10;Added Home url to Navbar" />
   </component>
 </project>
