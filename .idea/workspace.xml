@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/media/carousel-pics/Intel-Core-i9-9900KS_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/carousel-pics/geforce-rtx-super-series-og-1200x630.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/carousel-pics/maxresdefault (1).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/carousel-pics/modern_warfare_bundle_rtx.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GStore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/GStore/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/myaccount.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,18 +45,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/media/carousel-pics" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\profile-pics" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\Desktop\GStore\media" />
       <recent name="C:\Users\Lenovo\Desktop\GStore\home\static" />
       <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\carousel-pics" />
+      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\profile-pics" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -127,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569344758948</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Product Details Page linked to Database.&#10;Defined dynamic urls for each product.">
+      <created>1569352788378</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569352788378</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +177,7 @@
     <MESSAGE value="dB" />
     <MESSAGE value="Added 3 products (db)" />
     <MESSAGE value="Home Page Cards added.&#10;Added Home url to Navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Home Page Cards added.&#10;Added Home url to Navbar" />
+    <MESSAGE value="Product Details Page linked to Database.&#10;Defined dynamic urls for each product." />
+    <option name="LAST_COMMIT_MESSAGE" value="Product Details Page linked to Database.&#10;Defined dynamic urls for each product." />
   </component>
 </project>

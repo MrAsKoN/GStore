@@ -3,8 +3,42 @@
     <div class="container">
         <h1>{{ product.name }}</h1>
         <div class="row">
-            <div class="col md-6"><img src="{{ product.image.url }}"></div>
 
+            <div class="col sm-6">
+                <img src="{{ product.image.url }}" class="img-fluid">
+            </div>
+
+
+      <!-- Right Column -->
+            <div class="col sm-6">
+
+            <!-- Product Description -->
+                <div class="product-description">
+                  <span><h3>Category: {{ product.type }}</h3></span>
+                  <p><h6>{{ product.description }}</h6></p>
+                    {% if product.stock %}
+                        <h5 style="color: green">In Stock.</h5>
+                        <p>Hurry! Only {{ product.stock }} items are left!</p>
+                    {% else %}
+                        <h5 style="color: red">Currently Unavailable.</h5>
+                    {% endif %}
+
+                </div>
+
+                <div class="product-price">
+                  <span><h6><i class="fa fa-inr"></i> {{ product.price }}</h6></span>
+                    <br>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <br>
+                </div>
+
+                <div class="product ratings">
+                    <span>Rated {{ product.avg_rating }} out of 5</span>
+                    <br>
+                    <span><h6 style="color: blue">Fulfilled by GStore.</h6></span>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock content %}
+
