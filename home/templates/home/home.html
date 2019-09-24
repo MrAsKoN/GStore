@@ -3,43 +3,32 @@
 
 {% block content %}
     <h1>Home Page</h1>
-{% comment %}    {% for product in products %}
-        <h2>{{ product.name }}</h2>
-        <h3>{{ product.date_added }}</h3>
-        <h3>{{ product.price }}</h3>
-        <h3>{{ product.type }}</h3>
-        <img src="{{ product.image.url }} " alt="product image">
-    {% endfor %}{% endcomment %}
 
+    <div class="row mt-4">
 
-    {% for product in products %}
-    <div class="row">
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info shoe text-center">
-                        <div class="men-thumb-item">
-                            <img src={{ product.image.url }} class="img-fluid" alt="">
+                {% for product in products %}
+                <div class="col-lg-4  mt-lg-5 mt-4 mx-auto">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="http://127.0.0.1:8000/form-update-bus/{{ b.bus_id }}">
+                                <img class="card-img-bottom " src="{{ product.image.url }}" alt="Card image cap">
+
+                            </a>
                         </div>
-                        <div class="item-info-product">
-                            <h4>
-                                <a href="#">{{ product.name }}</a>
-                            </h4>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="http://127.0.0.1:8000/form-update-bus/{{ product.name }}">{{ product.name }}</a>
+                            </h5>
+                            <p>Rs.{{ product.price }}</p>
+                            {#<p>{{ product.description }}</p>#}
+                            <a href="#" class="btn btn-primary">Add To Cart</a>
 
-                            <div class="product_price">
-                                <div class="grid-price">
-                                    <span class="money">RS.{{ product.price }}</span>
-                                </div>
-                            </div>
-                            <ul class="stars">
-                                <li><a href="#"><span class="fa fa-star" aria-hidden="true"></span></a></li>
-                                <li><a href="#"><span class="fa fa-star" aria-hidden="true"></span></a></li>
-                                <li><a href="#"><span class="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                <li><a href="#"><span class="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                <li><a href="#"><span class="fa fa-star-o" aria-hidden="true"></span></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
-    {% endfor %}
+                {% endfor %}
+    </div>
+
 
 
 
