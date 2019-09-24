@@ -126,3 +126,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gongmantrouble@gmail.com'
+EMAIL_HOST_PASSWORD = '12345@Abcde'
+EMAIL_PORT = 587
