@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="Avatar added">
+      <change afterPath="$PROJECT_DIR$/home/migrations/0003_auto_20190924_1812.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0004_auto_20190924_1812.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,8 +99,16 @@
       <updated>1569050138253</updated>
       <workItem from="1569050286350" duration="14864000" />
       <workItem from="1569085816531" duration="795000" />
-      <workItem from="1569315449628" duration="2582000" />
+      <workItem from="1569315449628" duration="3419000" />
     </task>
+    <task id="LOCAL-00001" summary="Avatar added">
+      <created>1569329010860</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569329010861</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
