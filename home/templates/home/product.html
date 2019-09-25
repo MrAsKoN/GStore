@@ -16,11 +16,13 @@
                 <div class="product-description">
                   <span><h3>Category: {{ product.type }}</h3></span>
                   <p><h6>{{ product.description }}</h6></p>
-                    {% if product.stock %}
-                        <h5 style="color: green">In Stock.</h5>
+                    {% if product.stock < 10 and product.stock > 0 %}
+                        <h5 style="color: green">In Stock<Stock class=""></Stock></h5>
                         <p>Hurry! Only {{ product.stock }} items are left!</p>
-                    {% else %}
+                    {% elif product.stock < 0 %}
                         <h5 style="color: red">Currently Unavailable.</h5>
+                     {% else %}
+                        <h5 style="color: green">In Stock.</h5>
                     {% endif %}
 
                 </div>
@@ -41,4 +43,3 @@
         </div>
     </div>
 {% endblock content %}
-

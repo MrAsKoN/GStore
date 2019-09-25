@@ -6,3 +6,4 @@ from django.contrib.auth.models import User
 class CustomUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(default='default.jpg', upload_to='profile-pics')
+    REQUIRED_FIELDS = ['email']
