@@ -17,3 +17,7 @@ def products(request, id):
         'product': product
     }
     return render(request, 'home/product.html', context)
+
+
+def cart(request):
+    return render(request, 'home/cart.html')

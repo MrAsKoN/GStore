@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/GStore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GStore.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,19 +42,20 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/media/carousel-pics" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates/home" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\home\templates\home" />
+      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\carousel-pics" />
+      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\profile-pics" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\Desktop\GStore\media" />
       <recent name="C:\Users\Lenovo\Desktop\GStore\home\static" />
       <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\carousel-pics" />
-      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\profile-pics" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -109,6 +110,7 @@
       <workItem from="1569315449628" duration="3419000" />
       <workItem from="1569381868903" duration="327000" />
       <workItem from="1569382224264" duration="5934000" />
+      <workItem from="1569948565220" duration="3033000" />
     </task>
     <task id="LOCAL-00001" summary="Avatar added">
       <created>1569329010860</created>
@@ -145,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569388815973</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modified user model:Address field&#10;Added Entry and Cart Model">
+      <created>1569678138148</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1569678138148</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +194,7 @@
     <MESSAGE value="Home Page Cards added.&#10;Added Home url to Navbar" />
     <MESSAGE value="Product Details Page linked to Database.&#10;Defined dynamic urls for each product." />
     <MESSAGE value="Added pro to db" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pro to db" />
+    <MESSAGE value="Modified user model:Address field&#10;Added Entry and Cart Model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified user model:Address field&#10;Added Entry and Cart Model" />
   </component>
 </project>
