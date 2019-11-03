@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from users.models import CustomUser
+# import base64
 
 
 # Create your models here.
@@ -15,19 +16,24 @@ class Product(models.Model):
     avg_rating = models.FloatField(max_length=10, default=0.0)
     image = models.ImageField(default="default.jpg", upload_to="product-pics")
 
+    # def encoded_id(self):
+    #     return base64.b64encode(str(self.id))
+    #
+    # def decoded_id(self):
+    #     return base64.b64decode(str(self.id))
 
-class Cart(models.Model):
-    user = models.ForeignKey(CustomUser, blank=True, on_delete='CASCADE')
-    count = models.PositiveIntegerField(default=0)
-    total = models.DecimalField(default=0, max_digits=10, decimal_places=2)
-
-    def __str__(self):
-        return "User: {} has {} items in their cart. Their total is ${}".format(self.user, self.count, self.total)
-
-
-class Entry(models.Model):
-    product = models.ForeignKey(Product, null=True, on_delete='CASCADE')
-    cart = models.ForeignKey(Cart, null=True, on_delete='CASCADE')
-
-    def __str__(self):
-        return "This entry contains {} {}(s).".format(self.quantity, self.product.name)
+# class Cart(models.Model):
+#     user = models.ForeignKey(CustomUser, blank=True, on_delete='CASCADE')
+#     count = models.PositiveIntegerField(default=0)
+#     total = models.DecimalField(default=0, max_digits=10, decimal_places=2)
+#
+#     def __str__(self):
+#         return "User: {} has {} items in their cart. Their total is ${}".format(self.user, self.count, self.total)
+#
+#
+# class Entry(models.Model):
+#     product = models.ForeignKey(Product, null=True, on_delete='CASCADE')
+#     cart = models.ForeignKey(Cart, null=True, on_delete='CASCADE')
+#
+#     def __str__(self):
+#         return "This entry contains {} {}(s).".format(self.quantity, self.product.name)
