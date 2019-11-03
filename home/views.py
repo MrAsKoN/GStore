@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .models import Product
 
@@ -18,6 +19,6 @@ def products(request, id):
     }
     return render(request, 'home/product.html', context)
 
-
+@login_required
 def cart(request):
     return render(request, 'home/cart.html')
