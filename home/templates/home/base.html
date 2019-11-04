@@ -25,6 +25,12 @@
         {% endif %}
         <li><a href="{% url 'displaycart' %}">Cart</a></li>
         <li><a href="{% url 'home' %}">Home</a></li>
+        <li><form id="searchform" action="{% url 'search' %}" method="get" accept-charset="utf-8">
+      <input class="form-control mr-sm-2" style="margin: 5px 5px"  name="search" type="search" placeholder="Search" aria-label="Search">
+      <button class="searchbutton" type="submit">
+
+      </button>
+    </form></li>
 {#        <li style="float: left">#}
 {#            <div class="toggle">#}
 {#            <div class="hamburger" onclick="this.toggleClass('is-active')">#}

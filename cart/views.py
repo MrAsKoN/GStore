@@ -140,8 +140,7 @@ def increasequantity(request, item_id):
         'shippingcost': shippingcost,
         'grandtotal': existingorder.get_cart_total() + shippingcost
     }
-    return render(request,'cart/cart.html',context)
-
+    return render(request, 'cart/cart.html', context)
 
 
 def decreasequantity(request, item_id):
@@ -161,4 +160,4 @@ def decreasequantity(request, item_id):
         'shippingcost': shippingcost,
         'grandtotal': existingorder.get_cart_total() + shippingcost
     }
-    return render(request,'cart/cart.html',context)
+    return render(request, 'cart/cart.html', context)

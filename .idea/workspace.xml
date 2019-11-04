@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GStore/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/GStore/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/templates/cart/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +118,8 @@
       <workItem from="1572804213748" duration="871000" />
       <workItem from="1572839933982" duration="4972000" />
       <workItem from="1572856966348" duration="4104000" />
-      <workItem from="1572861093063" duration="2863000" />
+      <workItem from="1572861093063" duration="2914000" />
+      <workItem from="1572867958213" duration="5401000" />
     </task>
     <task id="LOCAL-00001" summary="Avatar added">
       <created>1569329010860</created>
@@ -200,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572845351100</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Quantity Updation">
+      <created>1572863987688</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1572863987688</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +250,7 @@
     <MESSAGE value="Updated some urls" />
     <MESSAGE value="Added some Cart functionality" />
     <MESSAGE value="Add to Cart and Delete from Cart functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add to Cart and Delete from Cart functionality" />
+    <MESSAGE value="Quantity Updation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quantity Updation" />
   </component>
 </project>

@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+{% block content %}
+    <br>
+    <h6>Found {{noofproducts}} relevant results of {{ totalnoofproducts }} total products.</h6>
+    <div class="row mt-4">
+
+                {% for product in products %}
+                    <div class="col-lg-4  mt-lg-5 mt-4 mx-auto">
+                        <div class="card">
+                            <div class="card-header p-0 position-relative">
+                                <a href="{% url 'product' product.id %}">
+                                    <img class="card-img-bottom " src="{{ product.image.url }}" alt="Card image cap">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="blog-title card-title font-weight-bold">
+
+                                    <a href="{% url 'product' product.id %}">{{ product.name }}</a>
+
+                                </h5>
+                                <p>Rs.{{ product.price }}</p>
+                                <a href="{% url 'addtocart' product.id %}" class="btn btn-primary">Add To Cart</a>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+    </div>
+{% endblock content %}
