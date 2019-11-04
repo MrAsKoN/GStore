@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, EditProfileForm
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.conf import settings
+
 
 # Create your views here.
 def register(request):
@@ -28,5 +29,26 @@ def register(request):
 
 
 @login_required
-def myaccount(request):
-    return render(request, 'users/myaccount.html')
+def profile(request):
+    return render(request, 'users/profile.html')
+
+
+@login_required
+def editprofile(request):
+    if request.method == 'POST':
+        userform = EditProfileForm(request.POST, instance=request.user, prefix='user')
+        profileform = EditProfileForm(request.POST, instance=request.user.customuser, prefix="profile")
+        if userform.is_valid() and profileform.is_valid():
+            user = userform.save()
+            profile = profileform.save(commit=False)
+            profile.user = user
+            profile.save()
+            return redirect('profile')
+    else:
+        userform = EditProfileForm(request.POST, instance=request.user, prefix='user')
+        profileform = EditProfileForm(request.POST, instance=request.user.customuser, prefix="profile")
+        context = {
+            'userform': userform,
+            'profileform': profileform
+        }
+        return render(request, 'users/editprofile.html', context)
