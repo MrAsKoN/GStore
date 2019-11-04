@@ -1,4 +1,6 @@
 {% extends 'home/base.html' %}
+{% load mathfilters %}
+
 {% block content %}
 <section class="jumbotron text-center">
     <div class="container">
@@ -25,8 +27,8 @@
                             <tr>
                                 <td>{{ orderitem.product.name }}</td>
                                 <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
-                                <td class="text-right">Rs.{{orderitem.product.price}}</td>
+                                <td><a style="padding: 0; margin: 0 5px;" href="{% url 'decreaseqty' orderitem.product.id %}" class="btn"><i class="fa fa-minus"></i></a><span>{{ orderitem.quantity }}</span><a style="padding: 0; margin: 0 5px;" href="{% url 'increaseqty' orderitem.product.id %}" class="btn"><i class="fa fa-plus"></i></a></td>
+                                <td class="text-right">Rs.{{orderitem.product.price|mul:orderitem.quantity}}</td>
                                 <td><a class="btn btn-sm btn-danger" href="{% url 'deletefromcart' orderitem.product.id %}"><i class="fa fa-trash"></i></a></td>
                             </tr>
                         {% endfor %}

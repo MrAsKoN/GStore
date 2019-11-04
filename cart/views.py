@@ -34,11 +34,26 @@ def add_to_cart(request, **kwargs):
     order_item, status = OrderItem.objects.get_or_create(product=product)
     # create order associated with the user
     user_order, status = Order.objects.get_or_create(owner=user_profile, is_ordered=False)
-    user_order.items.add(order_item)
-    if status:
-        # generate a reference code
-        user_order.ref_code = generate_order_id()
-        user_order.save()
+    if product.stock <= 0:
+        messages.info(request, product.name + 'is out of stock!')
+    else:
+
+        user_order.items.add(order_item)
+        if status:
+            # generate a reference code
+            user_order.ref_code = generate_order_id()
+            user_order.save()
+        shippingcost = 100
+        if user_order.get_cart_items().count() == 0:
+            shippingcost = 0
+        context = {
+            'title': "Cart",
+            'order': user_order,
+            'shippingcost': shippingcost,
+            'grandtotal': user_order.get_cart_total() + shippingcost
+        }
+        # show confirmation message and redirect back to the same page
+        messages.info(request, product.name + 'has been to your Cart!')
     shippingcost = 100
     if user_order.get_cart_items().count() == 0:
         shippingcost = 0
@@ -48,8 +63,6 @@ def add_to_cart(request, **kwargs):
         'shippingcost': shippingcost,
         'grandtotal': user_order.get_cart_total() + shippingcost
     }
-    # show confirmation message and redirect back to the same page
-    messages.info(request, product.name + 'has been to your Cart!')
     return render(request, 'cart/cart.html', context)
 
 
@@ -108,3 +121,44 @@ def displaycart(request):
     }
     print(existingorder.get_cart_items())
     return render(request, 'cart/cart.html', context)
+
+
+def increasequantity(request, item_id):
+    existingorder = get_user_pending_order(request)
+    deletedproduct = Product.objects.filter(id=item_id)
+    item_to_delete = OrderItem.objects.get(product=deletedproduct[0])
+    item_to_delete.quantity += 1
+    if item_to_delete.quantity > deletedproduct[0].stock:
+        messages.info(request, deletedproduct[0].name + " Cannot increase quantity !")
+    else:
+        item_to_delete.save()
+    shippingcost = 100
+    if existingorder.get_cart_items().count() == 0:
+        shippingcost = 0
+    context = {
+        'order': existingorder,
+        'shippingcost': shippingcost,
+        'grandtotal': existingorder.get_cart_total() + shippingcost
+    }
+    return render(request,'cart/cart.html',context)
+
+
+
+def decreasequantity(request, item_id):
+    existingorder = get_user_pending_order(request)
+    deletedproduct = Product.objects.filter(id=item_id)
+    item_to_delete = OrderItem.objects.get(product=deletedproduct[0])
+    item_to_delete.quantity -= 1
+    if item_to_delete.quantity <= 0:
+        messages.info(request, "Quantity cannot be zero or negative")
+    else:
+        item_to_delete.save()
+    shippingcost = 100
+    if existingorder.get_cart_items().count() == 0:
+        shippingcost = 0
+    context = {
+        'order': existingorder,
+        'shippingcost': shippingcost,
+        'grandtotal': existingorder.get_cart_total() + shippingcost
+    }
+    return render(request,'cart/cart.html',context)

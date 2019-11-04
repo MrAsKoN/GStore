@@ -19,7 +19,7 @@
                     {% if product.stock < 10 and product.stock > 0 %}
                         <h5 style="color: green">In Stock<Stock class=""></Stock></h5>
                         <p>Hurry! Only {{ product.stock }} items are left!</p>
-                    {% elif product.stock < 0 %}
+                    {% elif product.stock <= 0 %}
                         <h5 style="color: red">Currently Unavailable.</h5>
                      {% else %}
                         <h5 style="color: green">In Stock.</h5>
@@ -30,7 +30,7 @@
                 <div class="product-price">
                   <span><h6><i class="fa fa-inr"></i> {{ product.price }}</h6></span>
                     <br>
-                  <a href="{% url 'cart' %}" class="btn btn-primary">Add to Cart</a>
+                  <a href="{% url 'addtocart' product.id %}" class="btn btn-primary">Add to Cart</a>
                     <br>
                 </div>
 
