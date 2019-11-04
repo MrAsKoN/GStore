@@ -39,10 +39,14 @@ def add_to_cart(request, **kwargs):
         # generate a reference code
         user_order.ref_code = generate_order_id()
         user_order.save()
+    shippingcost = 100
+    if user_order.get_cart_items().count() == 0:
+        shippingcost = 0
     context = {
         'title': "Cart",
-        'user_order': user_order,
-        'grandtotal': user_order.get_cart_total() + 100
+        'order': user_order,
+        'shippingcost': shippingcost,
+        'grandtotal': user_order.get_cart_total() + shippingcost
     }
     # show confirmation message and redirect back to the same page
     messages.info(request, product.name + 'has been to your Cart!')
@@ -51,13 +55,33 @@ def add_to_cart(request, **kwargs):
 
 @login_required()
 def delete_from_cart(request, item_id):
-    item_to_delete = OrderItem.objects.filter(pk=item_id)
-    deletedproduct=Product.objects.filter(id=item_id)
-    if item_to_delete.exists():
-        print(item_to_delete[0])
-        item_to_delete[0].delete()
-        messages.info(request, deletedproduct.name + " has been removed from the Cart!")
-    return render(request, 'cart/cart.html')
+    print('111')
+    deletedproduct = Product.objects.filter(id=item_id)
+    print('Deleted : ', deletedproduct)
+    oldorder = get_user_pending_order(request)
+    item_to_delete = OrderItem.objects.get(product=deletedproduct[0])
+    print(item_to_delete)
+    # print(item_id)
+    print(item_to_delete)
+    if item_to_delete:
+        print(item_to_delete)
+        item_to_delete.delete()
+        # messages.info(request, deletedproduct.name + " has been removed from the Cart!")
+    existingorder = get_user_pending_order(request)
+    shippingcost = 100
+    print(existingorder.get_cart_items())
+    if existingorder.get_cart_items().count() == 0:
+        shippingcost = 0
+    print(
+        shippingcost
+    )
+    context = {
+        'order': existingorder,
+        'shippingcost': shippingcost,
+        'grandtotal': existingorder.get_cart_total() + shippingcost
+    }
+    return render(request, 'cart/cart.html', context)
+
 
 @login_required()
 def get_user_pending_order(request):
@@ -69,11 +93,18 @@ def get_user_pending_order(request):
         return order[0]
     return 0
 
+
 @login_required()
 def displaycart(request):
     existingorder = get_user_pending_order(request)
+    shippingcost = 100
+    if existingorder.get_cart_items().count() == 0:
+        shippingcost = 0
+
     context = {
-        'order': existingorder
+        'order': existingorder,
+        'shippingcost': shippingcost,
+        'grandtotal': existingorder.get_cart_total() + shippingcost
     }
     print(existingorder.get_cart_items())
     return render(request, 'cart/cart.html', context)

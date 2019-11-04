@@ -21,7 +21,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for orderitem in user_order.get_cart_items %}
+                        {% for orderitem in order.get_cart_items %}
                             <tr>
                                 <td>{{ orderitem.product.name }}</td>
                                 <td>In stock</td>
@@ -36,14 +36,14 @@
                             <td></td>
                             <td></td>
                             <td>Sub-Total</td>
-                            <td class="text-right">{{user_order.get_cart_total}}</td>
+                            <td class="text-right">Rs.{{order.get_cart_total}}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td>Shipping</td>
-                            <td class="text-right">Rs.100</td>
+                            <td class="text-right">Rs.{{ shippingcost }}</td>
                         </tr>
                         <tr>
                             <td></td>
