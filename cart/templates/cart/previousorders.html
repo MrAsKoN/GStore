@@ -31,8 +31,12 @@
                                     {{ orderitem.quantity }}<br>
                                 {% endfor %}</td>
                                 <td class="emphasized" style="color:black;">Rs.{{ order.get_cart_total|add:100 }}</td>
+                                <td>
+
+                                </td>
+                            {% endfor %}
                             </tr>
-                        {% endfor %}
+
 
 
                     </tbody>

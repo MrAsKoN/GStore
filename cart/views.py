@@ -22,17 +22,10 @@ def generate_order_id():
 
 @login_required()
 def add_to_cart(request, **kwargs):
-    # get the user profile
     user_profile = get_object_or_404(CustomUser, user=request.user)
-    # filter products by id
     product = Product.objects.filter(id=kwargs.get('item_id', "")).first()
-    # check if the user already owns this product
-    # if product in request.user.profile.ebooks.all():
-    #     messages.info(request, 'You already own this ebook')
-    #     return redirect(reverse('products:product-list'))
-    # create orderItem of the selected product
     order_item, status = OrderItem.objects.get_or_create(product=product)
-    # create order associated with the user
+    order_item.quantity = 1
     user_order, status = Order.objects.get_or_create(owner=user_profile, is_ordered=False)
     if product.stock <= 0:
         messages.info(request, product.name + 'is out of stock!')
@@ -124,6 +117,7 @@ def displaycart(request):
     print(existingorder.get_cart_items())
     return render(request, 'cart/cart.html', context)
 
+
 @login_required()
 def increasequantity(request, item_id):
     existingorder = get_user_pending_order(request)
@@ -143,6 +137,7 @@ def increasequantity(request, item_id):
         'grandtotal': existingorder.get_cart_total() + shippingcost
     }
     return render(request, 'cart/cart.html', context)
+
 
 @login_required()
 def decreasequantity(request, item_id):
@@ -164,6 +159,7 @@ def decreasequantity(request, item_id):
     }
     return render(request, 'cart/cart.html', context)
 
+
 @login_required()
 def checkout(request):
     existingorder = get_user_pending_order(request)
@@ -178,6 +174,7 @@ def checkout(request):
     }
     return render(request, 'cart/checkout.html', context)
 
+
 @login_required()
 def success(request):
     existingorder = get_user_pending_order(request)
@@ -185,22 +182,28 @@ def success(request):
     if existingorder:
         existingorder.is_ordered = True
         existingorder.date_ordered = datetime.datetime.now()
-        existingorder.ref_code=generate_order_id()
+        existingorder.ref_code = generate_order_id()
         print(existingorder.ref_code)
-        Order.objects.filter(owner=get_object_or_404(CustomUser,user=request.user),is_ordered=False).update(is_ordered=True,date_ordered=datetime.datetime.now())
+        Order.objects.filter(owner=get_object_or_404(CustomUser, user=request.user), is_ordered=False).update(
+            is_ordered=True, date_ordered=datetime.datetime.now())
         for item in existingorder.get_cart_items():
-            updatedstock=item.product.stock-item.quantity
+            updatedstock = item.product.stock - item.quantity
             Product.objects.filter(id=item.product.id).update(stock=updatedstock)
         # cart = Order.objects.get(is_ordered=True)
         # print(cart)
         return render(request, 'cart/success.html')
     return HttpResponse("<h1>404 Error Not Found!</h1>")
 
+
 @login_required()
 def orders(request):
-    curruser=CustomUser.objects.get(user=request.user)
-    allorders=Order.objects.filter(owner=curruser,is_ordered=True)
-    context={
-        'allorders':allorders
+    curruser = CustomUser.objects.get(user=request.user)
+    allorders = Order.objects.filter(owner=curruser, is_ordered=True)
+    context = {
+        'allorders': allorders
     }
-    return render(request,'cart/previousorders.html',context)
+    return render(request, 'cart/previousorders.html', context)
+
+@login_required()
+def adminhome(request):
+    return render(request, 'users/adminhome.html')

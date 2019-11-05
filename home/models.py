@@ -15,13 +15,14 @@ class Product(models.Model):
     description = models.TextField()
     avg_rating = models.FloatField(max_length=10, default=0.0)
     image = models.ImageField(default="default.jpg", upload_to="product-pics")
-    # @classmethod
-    # def create(cls,id,name,price,stock,type,description,avg_rating,image):
-    #     product = cls(id=id,name=name,price=price,stock=stock,type=type,description=description,avg_rating=avg_rating,image=image)
-    #     return product
-    #
-    # class Meta:
-    #     db_table='home_product'
+    @classmethod
+    def create(cls, id, name, price, stock, type, description, avg_rating, image):
+        product = cls(id=id, name=name, price=price, stock=stock, type=type, description=description,
+                      avg_rating=avg_rating, image=image)
+        return product
+
+    class Meta:
+        db_table = 'home_product'
 
     # def encoded_id(self):
     #     return base64.b64encode(str(self.id))

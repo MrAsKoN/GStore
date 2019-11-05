@@ -2,7 +2,9 @@ body{
     font-family: 'Montserrat',sans-serif;
 
 }
-
+p{
+    font-size: 50px;
+}
 nav{
     width: 100%;
     overflow: hidden;

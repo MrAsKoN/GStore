@@ -24,6 +24,10 @@
             <li><a href="{% url 'register' %}">Register</a></li>
             <li><a href="{% url 'login' %}">Login</a></li>
         {% endif %}
+
+        {% if user.is_superuser %}
+            <li><a href="{% url 'adminhome' %}">Products</a></li>
+        {% endif %}
         <li><a href="{% url 'displaycart' %}">Cart</a></li>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><form id="searchform" action="{% url 'search' %}" method="get" accept-charset="utf-8">

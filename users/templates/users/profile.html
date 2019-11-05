@@ -2,11 +2,17 @@
 {%load crispy_forms_tags%}
 {% block content %}
     <img class="img-fluid" src="{{ user.customuser.avatar.url }}"  width="200px" height="200px">
-    <h1>{{ user.username }}</h1>
+    <br>
+    <div class="row">
+    <div class="col sm-1"><h1>{{ user.username }}</h1></div>
+    <div class="col sm-1"><a href="{% url 'editprofile' %}" class="btn btn-primary">Edit Profile</a></div>
+    </div>
+
     <h3>{{ user.email }}</h3>
     <h3>{{ user.customuser.lastname }}</h3>
     <h3>{{ user.customuser.firstname }}</h3>
     <h5>Address: {{ user.customuser.address }}</h5>
     <h5>Phone Number: {{ user.customuser.phoneno }}</h5>
-    <a href="{% url 'editprofile' %}" class="btn btn-primary">Edit Profile</a>
+    <a href="{% url 'orders' %}" class="btn btn-dark">View Orders</a>
+
 {% endblock content %}

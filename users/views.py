@@ -68,7 +68,6 @@ def editprofile(request):
         #user_unq.avatar = avatar
         user_unq.phoneno = phone
         if 'avatar' in request.FILES:
-
             print(request.FILES['avatar'])
             user_unq.avatar = request.FILES['avatar']
         #print(avatar)
