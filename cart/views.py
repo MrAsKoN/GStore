@@ -5,7 +5,7 @@ from datetime import date
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.shortcuts import render, get_object_or_404, HttpResponse, redirect
 
 from cart.models import OrderItem, Order
 from home.models import Product
@@ -166,6 +166,7 @@ def checkout(request):
     shippingcost = 100
     if existingorder.get_cart_items().count() == 0:
         shippingcost = 0
+        return redirect('displaycart')
 
     context = {
         'order': existingorder,
@@ -178,19 +179,22 @@ def checkout(request):
 @login_required()
 def success(request):
     existingorder = get_user_pending_order(request)
-
     if existingorder:
+        newstock={}
+        for item in existingorder.get_cart_items():
+            updatedstock=item.product.stock - item.quantity
+            newstock[item]=updatedstock
+            if updatedstock < 0:
+                return HttpResponse("<h1>Out of Stock!</h1>")
+        for item in existingorder.get_cart_items():
+            Product.objects.filter(id=item.product.id).update(stock=newstock[item])
         existingorder.is_ordered = True
         existingorder.date_ordered = datetime.datetime.now()
         existingorder.ref_code = generate_order_id()
         print(existingorder.ref_code)
         Order.objects.filter(owner=get_object_or_404(CustomUser, user=request.user), is_ordered=False).update(
             is_ordered=True, date_ordered=datetime.datetime.now())
-        for item in existingorder.get_cart_items():
-            updatedstock = item.product.stock - item.quantity
-            Product.objects.filter(id=item.product.id).update(stock=updatedstock)
-        # cart = Order.objects.get(is_ordered=True)
-        # print(cart)
+
         return render(request, 'cart/success.html')
     return HttpResponse("<h1>404 Error Not Found!</h1>")
 
@@ -203,6 +207,7 @@ def orders(request):
         'allorders': allorders
     }
     return render(request, 'cart/previousorders.html', context)
+
 
 @login_required()
 def adminhome(request):
