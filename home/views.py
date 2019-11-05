@@ -13,6 +13,8 @@ def home(request):
     }
     return render(request, 'home/home.html', context)
 
+def about(request):
+    return render(request,'home/about.html')
 
 def products(request, id):
     product = Product.objects.get(id=id)
