@@ -124,7 +124,7 @@ def displaycart(request):
     print(existingorder.get_cart_items())
     return render(request, 'cart/cart.html', context)
 
-
+@login_required()
 def increasequantity(request, item_id):
     existingorder = get_user_pending_order(request)
     deletedproduct = Product.objects.filter(id=item_id)
@@ -144,7 +144,7 @@ def increasequantity(request, item_id):
     }
     return render(request, 'cart/cart.html', context)
 
-
+@login_required()
 def decreasequantity(request, item_id):
     existingorder = get_user_pending_order(request)
     deletedproduct = Product.objects.filter(id=item_id)
@@ -164,7 +164,7 @@ def decreasequantity(request, item_id):
     }
     return render(request, 'cart/cart.html', context)
 
-
+@login_required()
 def checkout(request):
     existingorder = get_user_pending_order(request)
     shippingcost = 100
@@ -178,13 +178,15 @@ def checkout(request):
     }
     return render(request, 'cart/checkout.html', context)
 
-
+@login_required()
 def success(request):
     existingorder = get_user_pending_order(request)
 
     if existingorder:
         existingorder.is_ordered = True
         existingorder.date_ordered = datetime.datetime.now()
+        existingorder.ref_code=generate_order_id()
+        print(existingorder.ref_code)
         Order.objects.filter(owner=get_object_or_404(CustomUser,user=request.user),is_ordered=False).update(is_ordered=True,date_ordered=datetime.datetime.now())
         for item in existingorder.get_cart_items():
             updatedstock=item.product.stock-item.quantity
@@ -193,3 +195,12 @@ def success(request):
         # print(cart)
         return render(request, 'cart/success.html')
     return HttpResponse("<h1>404 Error Not Found!</h1>")
+
+@login_required()
+def orders(request):
+    curruser=CustomUser.objects.get(user=request.user)
+    allorders=Order.objects.filter(owner=curruser,is_ordered=True)
+    context={
+        'allorders':allorders
+    }
+    return render(request,'cart/previousorders.html',context)
