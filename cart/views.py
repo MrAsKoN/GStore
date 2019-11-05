@@ -161,3 +161,16 @@ def decreasequantity(request, item_id):
         'grandtotal': existingorder.get_cart_total() + shippingcost
     }
     return render(request, 'cart/cart.html', context)
+
+def checkout(request):
+    existingorder = get_user_pending_order(request)
+    shippingcost = 100
+    if existingorder.get_cart_items().count() == 0:
+        shippingcost = 0
+
+    context = {
+        'order': existingorder,
+        'shippingcost': shippingcost,
+        'grandtotal': existingorder.get_cart_total() + shippingcost
+    }
+    return render(request,'cart/checkout.html',context)
