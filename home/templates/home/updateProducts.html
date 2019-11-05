@@ -1,0 +1,73 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <div class="container">
+    <h1>Update Product</h1>
+  	<hr>
+	<div class="row">
+      <div class="col-md-9 personal-info">
+        <h3>Product info</h3>
+
+        <form class="form-horizontal" role="form" method="post" action="{% url 'updateproducts' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+          <div class="form-group">
+              <label class="col-lg-3 control-label">Product Image:</label>
+          <input type="file" name="productimg" value={{ pro}} style="border:none"  class="form-control">
+        </div>
+
+            <div class="form-group">
+            <label class="col-lg-3 control-label">Product Id:</label>
+            <div class="col-lg-8">
+              <input name="productid" value="{{ product.id }}" class="form-control" type="text" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Product name:</label>
+            <div class="col-lg-8">
+              <input name="productname" value="{{ product.name }}" class="form-control" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Price:</label>
+            <div class="col-md-8" >
+              <input name = "price" value="{{ product.price }}" class="form-control" type="number"  >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Stock:</label>
+            <div class="col-md-8">
+              <input name = "stock" value="{{ product.stock }}" class="form-control" type="number" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Type</label>
+            <div class="col-md-8" >
+              <input name = "producttype" class="form-control" type="text"  >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Description</label>
+            <div class="col-md-8" >
+              <input name = "description" value="{{ product.description }}" class="form-control" type="text" style="height: 150px">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Average Rating</label>
+            <div class="col-md-8" >
+              <input name = "rating" class="form-control" type="number"  value={{ product.avg_rating }}>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+                <button type="submit" name="saveBtn" class="btn btn-primary" value="Save Changes">Save Changes</button>
+              <span></span>
+              <input type="reset" class="btn btn-default" value="Cancel">
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+<hr>
+{% endblock content %}
