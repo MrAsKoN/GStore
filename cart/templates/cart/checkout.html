@@ -13,28 +13,25 @@
                             <div id="template" class="row panel-wrapper">
                                 <div class="col-12 panel-header basket-header">
                                     <div class="row">
-                                        <div class="col-6 basket-title">
-                                            <span class="description">review your</span><br><span class="emphasized">Cart Summary</span>
+                                        <div class="col-5 basket-title">
+                                            <span class="description">Cart Summary</span><br><span class="emphasized">Product Name</span>
                                         </div>
-                                        <div class="col-6 order-number align-right">
-                                            <span class="description">order #</span><br><span class="emphasized">order_number</span>
+                                        <div class="col-3">
+                                            <span class="description"></span><br><span class="emphasized">Quantity</span>
+                                        </div>
+                                        <div class="col-4 order-number align-right">
+                                            <span class="description"></span><br><span class="emphasized">Price</span>
                                         </div>
                                     </div>
-                                    <div class="row column-titles padding-top-10">
-                                        <div class="col-2 align-center"><span>Photo</span></div>
-                                        <div class="col-5 align-center"><span>Name</span></div>
-                                        <div class="col-2 align-center"><span>Quantity</span></div>
-                                        <div class="col-3 align-right"><span>Price</span></div>
-                                    </div>
+
                                 </div>
 
                                 <div class="col-12 panel-body basket-body">
                                     {% for item in order.get_cart_items %}
                                     <div class="row product">
-                                        <div class="col-2 product-image"><img src={{ item.product.image }}></div>
                                         <div class="col-5">{{ item.product.name }}<br><span class="additional"></span></div>
-                                        <div class="col-2 align-right"><span class="sub">unit</span> {{ item.quantity }}</div>
-                                        <div class="col-3 align-right"><span class="sub">currency</span>{{ item.product.price|mul:item.quantity}}</div>
+                                        <div class="col-2 align-right"><span class="sub"></span> {{ item.quantity }}</div>
+                                        <div class="col-5 align-right"><span class="sub">Rs.</span>{{ item.product.price|mul:item.quantity}}</div>
                                     </div>
                                     {% endfor %}
                                 </div>
@@ -42,14 +39,14 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-8 align-right description"><div class="dive">SubTotal</div></div>
-                                        <div class="col-4 align-right"><span class="emphasized">{{ grandtotal |sub:shippingcost }}</span></div>
+                                        <div class="col-4 align-center"><span class="emphasized">Rs.{{ grandtotal |sub:shippingcost }}</span></div>
                                         <div class="col-8 align-right description"><div class="dive">Shipping</div></div>
-                                        <div class="col-4 align-right"><span class="emphasized">{{ shippingcost }}</span></div>
+                                        <div class="col-4 align-right"><span class="emphasized">Rs.{{ shippingcost }}</span></div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-8 align-right description"><div class="dive">Total</div></div>
-                                        <div class="col-4 align-right"><span class="very emphasized">{{grandtotal}}</span></div>
+                                        <div class="col-4 align-center"><span class="emphasized">Rs.{{grandtotal}}</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +56,7 @@
                                 <div class="col-12 panel-header creditcard-header">
                                     <div class="row">
                                         <div class="col-12 creditcard-title">
-                                            <span class="description">please enter your</span><br><span class="emphasized">Credit Card Information</span>
+                                            <span class="description">Payment</span><br><span class="emphasized">Credit Card Information</span>
                                         </div>
                                     </div>
                                 </div>

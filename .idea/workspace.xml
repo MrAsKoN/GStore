@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="" />
+    <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/static/css/checkout.css" beforeDir="false" afterPath="$PROJECT_DIR$/cart/static/css/checkout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/templates/cart/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/home/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/home/base.css" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
