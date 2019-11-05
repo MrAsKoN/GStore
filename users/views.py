@@ -40,8 +40,14 @@ def editprofile(request):
         profileform = EditProfileForm(request.POST, instance=request.user.customuser, prefix="profile")
         if userform.is_valid() and profileform.is_valid():
             user = userform.save()
-            profile = profileform.save(commit=False)
+            print(user)
+            profile = profileform.save(commit=True)
+            print(profile)
             profile.user = user
+            print(request.FILES)
+            if 'profile-avatar' in request.FILES:
+                print(1212)
+                profile.avatar=request.FILES['profile-avatar']
             profile.save()
             return redirect('profile')
     else:
