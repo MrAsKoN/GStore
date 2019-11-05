@@ -58,7 +58,8 @@
                                 <a href="{% url 'product' product.id %}">{{ product.name }}</a>
 
                             </h5>
-                            <p>Rs.{{ product.price }}</p>
+                            <span class="emphasized" style="color: black">Rs.{{ product.price }}</span>
+                            <br>
                             <a href="{% url 'addtocart' product.id %}" class="btn btn-primary">Add To Cart</a>
 
                         </div>

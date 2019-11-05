@@ -10,4 +10,5 @@ urlpatterns = [
     path('increaseqty/<item_id>', views.increasequantity, name='increaseqty'),
     path('decreaseqty/<item_id>', views.decreasequantity, name='decreaseqty'),
     path('checkout', views.checkout, name='checkout'),
+    path('success', views.success, name='success'),
 ]

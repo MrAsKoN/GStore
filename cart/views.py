@@ -5,7 +5,7 @@ from datetime import date
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponse
 
 from cart.models import OrderItem, Order
 from home.models import Product
@@ -99,9 +99,7 @@ def delete_from_cart(request, item_id):
 @login_required()
 def get_user_pending_order(request):
     user_profile = get_object_or_404(CustomUser, user=request.user)
-    print(user_profile.user.username)
     order = Order.objects.filter(owner=user_profile, is_ordered=False)
-    print(order)
     if order.exists():
         return order[0]
     return 0
@@ -109,7 +107,11 @@ def get_user_pending_order(request):
 
 @login_required()
 def displaycart(request):
+    user_profile = get_object_or_404(CustomUser, user=request.user)
     existingorder = get_user_pending_order(request)
+    print(existingorder)
+    if existingorder == 0:
+        existingorder = Order.objects.get_or_create(owner=user_profile, is_ordered=False)
     shippingcost = 100
     if existingorder.get_cart_items().count() == 0:
         shippingcost = 0
@@ -162,6 +164,7 @@ def decreasequantity(request, item_id):
     }
     return render(request, 'cart/cart.html', context)
 
+
 def checkout(request):
     existingorder = get_user_pending_order(request)
     shippingcost = 100
@@ -173,4 +176,20 @@ def checkout(request):
         'shippingcost': shippingcost,
         'grandtotal': existingorder.get_cart_total() + shippingcost
     }
-    return render(request,'cart/checkout.html',context)
+    return render(request, 'cart/checkout.html', context)
+
+
+def success(request):
+    existingorder = get_user_pending_order(request)
+
+    if existingorder:
+        existingorder.is_ordered = True
+        existingorder.date_ordered = datetime.datetime.now()
+        Order.objects.filter(owner=get_object_or_404(CustomUser,user=request.user),is_ordered=False).update(is_ordered=True,date_ordered=datetime.datetime.now())
+        for item in existingorder.get_cart_items():
+            updatedstock=item.product.stock-item.quantity
+            Product.objects.filter(id=item.product.id).update(stock=updatedstock)
+        # cart = Order.objects.get(is_ordered=True)
+        # print(cart)
+        return render(request, 'cart/success.html')
+    return HttpResponse("<h1>404 Error Not Found!</h1>")

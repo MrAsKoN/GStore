@@ -15,44 +15,44 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Product</th>
-                            <th scope="col">Availability</th>
-                            <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right">Price</th>
+                            <th class="emphasized" style="color:black;" scope="col">Product</th>
+                            <th class="emphasized" style="color:black;" scope="col">Availability</th>
+                            <th class="emphasized" style="color:black;" scope="col" class="text-center">Quantity</th>
+                            <th class="emphasized" style="color:black;" scope="col" class="text-right">Price</th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for orderitem in order.get_cart_items %}
                             <tr>
-                                <td>{{ orderitem.product.name }}</td>
-                                <td>In stock</td>
-                                <td><a style="padding: 0; margin: 0 5px;" href="{% url 'decreaseqty' orderitem.product.id %}" class="btn"><i class="fa fa-minus"></i></a><span>{{ orderitem.quantity }}</span><a style="padding: 0; margin: 0 5px;" href="{% url 'increaseqty' orderitem.product.id %}" class="btn"><i class="fa fa-plus"></i></a></td>
-                                <td class="text-right">Rs.{{orderitem.product.price|mul:orderitem.quantity}}</td>
-                                <td><a class="btn btn-sm btn-danger" href="{% url 'deletefromcart' orderitem.product.id %}"><i class="fa fa-trash"></i></a></td>
+                                <td class="emphasized" style="color:black;" >{{ orderitem.product.name }}</td>
+                                <td class="emphasized" style="color:black;">In stock</td>
+                                <td class="emphasized" style="color:black;"><a style="padding: 0; margin: 0 5px;" href="{% url 'decreaseqty' orderitem.product.id %}" class="btn"><i class="fa fa-minus"></i></a><span>{{ orderitem.quantity }}</span><a style="padding: 0; margin: 0 5px;" href="{% url 'increaseqty' orderitem.product.id %}" class="btn"><i class="fa fa-plus"></i></a></td>
+                                <td class="emphasized" style="color:black;">Rs.{{orderitem.product.price|mul:orderitem.quantity}}</td>
+                                <td ><a class="btn btn-sm btn-danger" href="{% url 'deletefromcart' orderitem.product.id %}"><i class="fa fa-trash"></i></a></td>
                             </tr>
                         {% endfor %}
 
                         <tr>
                             <td></td>
                             <td></td>
+                            <td class="emphasized" style="color:black;">Sub-Total</td>
+                            <td class="emphasized" style="color:black;">Rs.{{order.get_cart_total}}</td>
                             <td></td>
-                            <td>Sub-Total</td>
-                            <td class="text-right">Rs.{{order.get_cart_total}}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
+                            <td class="emphasized" style="color:black;">Shipping</td>
+                            <td class="emphasized" style="color:black;">Rs.{{ shippingcost }}</td>
                             <td></td>
-                            <td>Shipping</td>
-                            <td class="text-right">Rs.{{ shippingcost }}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
+                            <td class="emphasized" style="color:black;"><strong>Total</strong></td>
+                            <td class="emphasized" style="color:black;"><strong>Rs.{{ grandtotal }}</strong></td>
                             <td></td>
-                            <td><strong>Total</strong></td>
-                            <td class="text-right"><strong>Rs.{{ grandtotal }}</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -61,7 +61,7 @@
         <div class="col mb-2">
             <div class="row">
                 <div class="col-sm-12  col-md-6">
-                    <a class="btn btn-block btn-light" href="{% url 'home' %}">Continue Shopping</a>
+                    <a class="btn btn-lg btn-block btn-light" href="{% url 'home' %}">Continue Shopping</a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
                     <a href="{% url 'checkout' %}"  class="btn btn-lg btn-block btn-success text-uppercase">Checkout</a>
