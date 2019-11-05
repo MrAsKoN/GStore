@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/templates/cart/previousorders.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/previousorders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/templates/cart/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/static/home/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/home/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/addProducts.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/addProducts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0008_auto_20191105_2228.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/product-pics/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/profile-pics/IMG_20191102_175427.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/adminhome.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +136,7 @@
       <workItem from="1572889491072" duration="2497000" />
       <workItem from="1572892301931" duration="5501000" />
       <workItem from="1572927971615" duration="1658000" />
-      <workItem from="1572960251237" duration="14296000" />
+      <workItem from="1572960251237" duration="15109000" />
     </task>
     <task id="LOCAL-00001" summary="Avatar added">
       <created>1569329010860</created>
@@ -282,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572966026192</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Admin Page added with add product functionality">
+      <created>1572977309868</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1572977309868</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +329,7 @@
     <MESSAGE value="CheckOut" />
     <MESSAGE value="CheckOut template added" />
     <MESSAGE value="Product stock gets updated on checkout." />
-    <option name="LAST_COMMIT_MESSAGE" value="Product stock gets updated on checkout." />
+    <MESSAGE value="Admin Page added with add product functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin Page added with add product functionality" />
   </component>
 </project>
