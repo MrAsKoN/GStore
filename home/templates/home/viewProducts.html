@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+
+
+{% block content %}
+
+
+    <div class="row mt-4">
+
+                {% for product in products %}
+                <div class="col-lg-4  mt-lg-5 mt-4 mx-auto">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="{% url 'deleteProduct' product.id %}">
+                                <img class="card-img-bottom " src="{{ product.image.url }}" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+
+                                <a href="{% url 'deleteProduct' product.id %}">{{ product.name }}</a>
+
+                            </h5>
+                            <span class="emphasized" style="color: black">Rs.{{ product.price }}</span>
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+    </div>
+
+{% endblock content %}

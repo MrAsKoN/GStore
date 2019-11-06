@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>{{ product.name }}</h1>
+        <div class="row">
+
+            <div class="col sm-6">
+                <img src="{{ product.image.url }}" class="img-fluid">
+            </div>
+
+<div class="col-md-9 personal-info">
+
+        <h3>Product info</h3>
+
+        <form class="form-horizontal" role="form" method="POST" action="{% url 'confDelete' product.id %}" enctype="multipart/form-data">{% csrf_token %}
+            <div class="col-md-8">
+                <button type="submit" name="saveBtn" class="btn btn-primary" value="">Delete Product</button>
+              <span></span>
+              <input type="reset" class="btn btn-default" value="Cancel">
+            </div>
+        </form>
+      </div>
+        </div>
+    </div>
+{% endblock content %}

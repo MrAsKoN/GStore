@@ -180,10 +180,10 @@ def checkout(request):
 def success(request):
     existingorder = get_user_pending_order(request)
     if existingorder:
-        newstock={}
+        newstock = {}
         for item in existingorder.get_cart_items():
-            updatedstock=item.product.stock - item.quantity
-            newstock[item]=updatedstock
+            updatedstock = item.product.stock - item.quantity
+            newstock[item] = updatedstock
             if updatedstock < 0:
                 return HttpResponse("<h1>Out of Stock!</h1>")
         for item in existingorder.get_cart_items():
@@ -192,20 +192,22 @@ def success(request):
         existingorder.date_ordered = datetime.datetime.now()
         existingorder.ref_code = generate_order_id()
         print(existingorder.ref_code)
+        existingorder.save()
         Order.objects.filter(owner=get_object_or_404(CustomUser, user=request.user), is_ordered=False).update(
             is_ordered=True, date_ordered=datetime.datetime.now())
-
+        Order.objects.get_or_create(owner=get_object_or_404(CustomUser, user=request.user), is_ordered=False)
         return render(request, 'cart/success.html')
     return HttpResponse("<h1>404 Error Not Found!</h1>")
 
 
 @login_required()
 def orders(request):
-    curruser = CustomUser.objects.get(user=request.user)
+    curruser = get_object_or_404(CustomUser, user=request.user)
     allorders = Order.objects.filter(owner=curruser, is_ordered=True)
     context = {
         'allorders': allorders
     }
+    print(allorders)
     return render(request, 'cart/previousorders.html', context)
 
 

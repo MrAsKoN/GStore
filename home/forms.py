@@ -20,3 +20,4 @@ class UpdateProductForm(forms.Form):
     description = forms.TextInput()
     avg_rating = forms.FloatField()
     image = forms.FileField()
+

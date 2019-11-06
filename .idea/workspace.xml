@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="Admin Page added with add product functionality">
+    <list default="true" id="e10218db-0fd2-47c0-931b-8c9e60befd20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/GStore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GStore.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/templates/cart/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/templates/cart/previousorders.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/previousorders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/static/home/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/home/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/updateProducts.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/showProducts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/templates/users/adminhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/adminhome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/editprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/editprofile.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,18 +69,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\cart\templates\cart" />
+      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\home\templates\home" />
+      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\carousel-pics" />
+      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\profile-pics" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\home\templates\home" />
       <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\profile-pics" />
       <recent name="C:\Users\Lenovo\Desktop\GStore\media" />
       <recent name="C:\Users\Lenovo\Desktop\GStore\home\static" />
       <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\cart\templates\cart" />
-      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\home\templates\home" />
-      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\carousel-pics" />
-      <recent name="C:\Users\AJINKYA\PycharmProjects\GStore\media\profile-pics" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -149,6 +148,7 @@
       <workItem from="1572892301931" duration="5501000" />
       <workItem from="1572927971615" duration="1658000" />
       <workItem from="1572960251237" duration="15109000" />
+      <workItem from="1573014377192" duration="2637000" />
     </task>
     <task id="LOCAL-00001" summary="Avatar added">
       <created>1569329010860</created>

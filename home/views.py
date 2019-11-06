@@ -82,33 +82,53 @@ def addProducts(request):
     return render(request, 'home/addProducts.html', {})
 
 
-def updateProducts(request):
+def updateProducts(request, item_id):
+    context = {
+        'product': Product.objects.get(pk=item_id)
+    }
+    return render(request, 'home/updateproduct.html', context)
+
+
+def updatedone(request, item_id):
     if request.method == "POST":
-        print("post")
-        productForm = UpdateProductForm(request.POST)
-        productData = productForm.data
-        productid = productData['productid']
-        product = get_object_or_404(Product, pk=productid)
-        productname = productData['productname']
+        print("inside")
+        prodForm = UpdateProductForm(request.POST)
+        prd = get_object_or_404(Product, pk=item_id)
+        productData = prodForm.data
         price = productData['price']
         stock = productData['stock']
-        productType = productData['producttype']
-        description = productData['description']
-        avgrating = productData['rating']
-        image = "default.jpg"
-        if len(Product.objects.filter(pk=productid)) > 0:
-            if 'productimg' in request.FILES:
-                print("present")
-                image = request.FILES['productimg']
-                print(request.FILES['productimg'])
-                Product.objects.filter(pk=productid).update(name=productname, price=price, stock=stock,
-                                                            type=productType,
-                                                            description=description, avg_rating=avgrating,
-                                                            image=image)
-                context = {
-                    'product': product
-                }
-                return render(request, 'users/adminhome.html', context)
-        else:
-            messages.warning(request, "No such Product found!")
-    return redirect('updateproducts')
+        image = prd.image
+        print(image)
+        print(request.FILES)
+        if 'productpic' in request.FILES:
+            image = request.FILES['productpic']
+        Product.objects.filter(pk=item_id).update(price=price, stock=stock, image=image)
+    return render(request, 'users/adminhome.html')
+
+
+def showProduct(request):
+    context = {
+        'products': Product.objects.all(),
+    }
+    return render(request, 'home/showProducts.html', context)
+
+
+def deleteProduct(request, item_id):
+    print(request.method)
+    prpduct = get_object_or_404(Product,pk = item_id)
+    context = {
+        'product':prpduct
+    }
+    return render(request, 'home/deleteproduct.html',context)
+
+
+def confDelete(request,item_id):
+    if request.method=="POST":
+        Product.objects.filter(pk=item_id).delete()
+        messages.info(request,"Product deleted successfully")
+    return render(request,"users/adminhome.html")
+def showdeleteProduct(request):
+    context = {
+        'products': Product.objects.all(),
+    }
+    return render(request, 'home/viewProducts.html', context)
